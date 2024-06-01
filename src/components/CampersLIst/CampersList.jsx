@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampersAsync } from '../../redux/campers/actions';
 import { selectCampers } from '../../redux/campers/selectors';
 
-import { Section } from './CampersListStyles';
+import { Section, CamperCollection } from './CampersListStyles';
 import CamperCard from '../CamperCard/CamperCard';
 
 const CampersList = () => {
@@ -17,12 +17,9 @@ const CampersList = () => {
 
   return (
     <Section>
-      <ul>
-        {campers &&
-          campers.map(camper => (
-            <CamperCard key={camper._id} camper={camper} />
-          ))}
-      </ul>
+      <CamperCollection>
+        {campers && campers.map(camper => <CamperCard key={camper._id} camper={camper} />)}
+      </CamperCollection>
     </Section>
   );
 };

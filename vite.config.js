@@ -7,6 +7,7 @@ export default defineConfig({
     react(),
     replace({
       'process.env': JSON.stringify(import.meta.env),
+      preventAssignment: true,
     }),
   ],
   resolve: {

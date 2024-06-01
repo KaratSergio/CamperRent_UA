@@ -2,11 +2,15 @@ import Button from '../Button/Button';
 import Amenities from '../CamperContent/Amenities/Amenities';
 
 import {
-  CamperItem,
-  CamperName,
+  BoxName,
+  BoxRating,
+  BoxAmenities,
   CamperDetail,
   CamperImage,
   CamperImageBox,
+  CamperItem,
+  CamperName,
+  CamperRating,
 } from './CamperCardStyles';
 
 const CamperCard = ({ camper }) => {
@@ -19,23 +23,19 @@ const CamperCard = ({ camper }) => {
           </CamperImageBox>
         </div>
         <div>
-          <div>
+          <BoxName>
             <CamperName>{camper.name}</CamperName>
-            <CamperDetail>
-              <strong>Price:</strong> ${camper.price}
-            </CamperDetail>
-          </div>
-          <div>
-            <CamperDetail>
-              <strong>Rating:</strong> {camper.rating}
-            </CamperDetail>
-            <CamperDetail>
-              <strong>Location:</strong> {camper.location}
-            </CamperDetail>
-          </div>
+            <CamperName>€{camper.price},00</CamperName>
+          </BoxName>
+          <BoxRating>
+            <CamperRating>{camper.rating}</CamperRating>
+            <CamperRating>{camper.location}</CamperRating>
+          </BoxRating>
           <CamperDetail>{camper.description}</CamperDetail>
-          <Amenities camper={camper} />
-          <Button />
+          <BoxAmenities>
+            <Amenities camper={camper} showAll={false} />
+          </BoxAmenities>
+          <Button>Show more</Button>
         </div>
       </CamperItem>
     </>
