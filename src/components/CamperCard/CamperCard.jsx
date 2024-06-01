@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import Modal from '../Modal/Modal';
 import Button from '../Button/Button';
 import Amenities from '../CamperContent/Amenities/Amenities';
 
@@ -14,6 +16,18 @@ import {
 } from './CamperCardStyles';
 
 const CamperCard = ({ camper }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeCamperId, setActiveCamperId] = useState(null);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const handleShowMoreClick = () => {
+    setActiveCamperId(camper._id);
+    toggleModal();
+  };
+
   return (
     <>
       <CamperItem key={camper._id}>
@@ -35,9 +49,20 @@ const CamperCard = ({ camper }) => {
           <BoxAmenities>
             <Amenities camper={camper} showAll={false} />
           </BoxAmenities>
-          <Button>Show more</Button>
+          <Button onClick={handleShowMoreClick}>Show more</Button>
         </div>
       </CamperItem>
+      {isModalOpen && (
+        <Modal
+          modalOpen={isModalOpen}
+          toggleModal={toggleModal}
+          images={camper.gallery}
+          name={camper.name}
+          rating={camper.rating}
+          price={camper.price}
+          description={camper.description}
+        />
+      )}
     </>
   );
 };

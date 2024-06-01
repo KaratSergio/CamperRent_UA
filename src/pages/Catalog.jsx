@@ -1,9 +1,10 @@
 import CampersList from '@components/CampersLIst/CampersList';
+// import SideBar from '../components/SideBar/SideBar';
 
 const Catalog = () => {
   return (
     <div>
-      <h1>Catalog campers</h1>
+      {/* <SideBar/> */}
       <CampersList />
     </div>
   );

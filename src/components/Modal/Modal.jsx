@@ -1,37 +1,60 @@
-import { ModalWrapper, ModalContent, CloseButton, PopupButton, PopupContent } from './ModalStyles';
+import { useState } from 'react';
+import Images from '../CamperContent/Images/Images';
 
-const Modal = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import { CamperName, CamperRating } from '../CamperCard/CamperCardStyles';
+import {
+  ModalWrapper,
+  ModalContent,
+  CloseButton,
+  PopupButton,
+  PopupContent,
+  PopupContainer,
+  CamperDetail,
+  ScrollContainer,
+  DecorLine,
+} from './ModalStyles';
+
+const Modal = ({ modalOpen, toggleModal, images, name, rating, price, description }) => {
   const [activePopup, setActivePopup] = useState('');
 
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
-
   const openPopup = popup => {
-    setActivePopup(popup);
+    setActivePopup(activePopup === popup ? '' : popup);
   };
 
   return (
     <>
-      <button onClick={toggleModal}>Open Modal</button>
-      <ModalWrapper isOpen={isOpen}>
+      <ModalWrapper modalOpen={modalOpen}>
         <ModalContent>
           <CloseButton onClick={toggleModal}>&times;</CloseButton>
-          <h2>Modal Title</h2>
-          <p>Modal content</p>
-          <div>
-            <PopupButton onClick={() => openPopup('features')}>Features</PopupButton>
-            <PopupContent isOpen={activePopup === 'features'}>
-              <p>Features content</p>
-            </PopupContent>
-          </div>
-          <div>
-            <PopupButton onClick={() => openPopup('reviews')}>Reviews</PopupButton>
-            <PopupContent isOpen={activePopup === 'reviews'}>
-              <p>Reviews content</p>
-            </PopupContent>
-          </div>
+          <CamperName>{name}</CamperName>
+          <CamperRating>{rating}(reviews)</CamperRating>
+          <CamperName>Price: €{price}</CamperName>
+          <ScrollContainer>
+            <Images images={images} />
+            <CamperDetail>Description: {description}</CamperDetail>
+          </ScrollContainer>
+          <PopupContainer>
+            <div>
+              <PopupButton
+                isActive={activePopup === 'features'}
+                onClick={() => openPopup('features')}
+              >
+                Features
+              </PopupButton>
+              <PopupContent modalOpen={activePopup === 'features'}>
+                <p>Features content</p>
+              </PopupContent>
+            </div>
+            <div>
+              <PopupButton isActive={activePopup === 'reviews'} onClick={() => openPopup('reviews')}>
+                Reviews
+              </PopupButton>
+              <PopupContent modalOpen={activePopup === 'reviews'}>
+                <p>Reviews content</p>
+              </PopupContent>
+            </div>
+          </PopupContainer>
+          <DecorLine></DecorLine>
         </ModalContent>
       </ModalWrapper>
     </>

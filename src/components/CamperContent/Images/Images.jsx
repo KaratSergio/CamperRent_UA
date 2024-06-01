@@ -1,10 +1,10 @@
 import { ImagesContainer, CamperImage } from './ImagesStyles';
 
-const Images = ({ camper }) => (
+const Images = ({ images }) => (
   <ImagesContainer>
-    <CamperImage src={camper.gallery[0]} alt={`${camper.name}`} />
-    <CamperImage src={camper.gallery[1]} alt={`${camper.name}`} />
-    <CamperImage src={camper.gallery[2]} alt={`${camper.name}`} />
+    {images.map((image, index) => (
+      <CamperImage key={index} src={image} alt={`Image ${index}`} />
+    ))}
   </ImagesContainer>
 );
 
