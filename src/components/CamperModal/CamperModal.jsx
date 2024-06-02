@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import Images from '../CamperContent/Images/Images';
 import CustomForm from '../CustomForm/CustomForm';
-import VehicleDetails from '../CamperContent/VehicleDetails/VehicleDetails';
+import Images from '../CamperContent/Images/Images';
+import Reviews from '../CamperContent/Reviews/Reviews';
 import Amenities from '../CamperContent/Amenities/Amenities';
+import VehicleDetails from '../CamperContent/VehicleDetails/VehicleDetails';
 
 import { CamperName, CamperRating } from '../CamperCard/CamperCardStyles';
 import {
@@ -17,9 +18,21 @@ import {
   DecorLine,
   ButtonContainer,
   PopupContentBox,
+  RatingModalBox,
+  CamperModalRating,
 } from './CamperModalStyles';
 
-const Modal = ({ modalOpen, toggleModal, images, name, rating, price, description, camper }) => {
+const Modal = ({
+  modalOpen,
+  toggleModal,
+  images,
+  name,
+  rating,
+  price,
+  description,
+  location,
+  camper,
+}) => {
   const [activePopup, setActivePopup] = useState('');
 
   useEffect(() => {
@@ -43,7 +56,10 @@ const Modal = ({ modalOpen, toggleModal, images, name, rating, price, descriptio
         <ModalContent>
           <CloseButton onClick={toggleModal}>&times;</CloseButton>
           <CamperName>{name}</CamperName>
-          <CamperRating>{rating}(reviews)</CamperRating>
+          <RatingModalBox>
+            <CamperModalRating>{rating}(reviews)</CamperModalRating>
+            <CamperRating>{location}</CamperRating>
+          </RatingModalBox>
           <CamperName>Price: €{price}</CamperName>
           <ScrollContainer>
             <Images images={images} />
@@ -75,6 +91,7 @@ const Modal = ({ modalOpen, toggleModal, images, name, rating, price, descriptio
                 )}
                 {activePopup === 'reviews' && (
                   <PopupContentBox>
+                    <Reviews camper={camper} />
                     <CustomForm />
                   </PopupContentBox>
                 )}

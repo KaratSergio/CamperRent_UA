@@ -32,8 +32,8 @@ export const ModalContent = styled.div`
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 34px;
+  right: 40px;
   font-size: 32px;
   background: none;
   border: none;
@@ -85,7 +85,7 @@ export const CamperDetail = styled.p`
 `;
 
 export const ScrollContainer = styled.div`
-  margin-bottom: 44px;
+  margin: 24px 0 44px 0;
   max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -111,4 +111,14 @@ export const PopupContent = styled.div`
 
 export const PopupContentBox = styled.div`
   display: flex;
+`;
+
+export const RatingModalBox = styled.div`
+  display: flex;
+  gap: 16px;
+  margin: 8px 0 16px 0;
+`;
+
+export const CamperModalRating = styled.div`
+  text-decoration: underline;
 `;

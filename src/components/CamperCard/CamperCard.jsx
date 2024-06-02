@@ -60,6 +60,7 @@ const CamperCard = ({ camper }) => {
           name={camper.name}
           rating={camper.rating}
           price={camper.price}
+          location={camper.location}
           description={camper.description}
           camper={camper}
         />
