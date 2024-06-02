@@ -2,14 +2,21 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const filterSlice = createSlice({
   name: 'filter',
-  initialState: '',
+  initialState: {
+    equipment: [],
+    vehicleType: null,
+    location: '',
+  },
   reducers: {
-    setFilter: (state, action) => {
-      return action.payload;
+    setFilterType: (state, action) => {
+      const { equipment, vehicleType, location } = action.payload;
+      state.equipment = equipment || [];
+      state.vehicleType = vehicleType || null;
+      state.location = location || '';
     },
   },
 });
 
-export const { setFilter } = filterSlice.actions;
+export const { setFilterType } = filterSlice.actions;
 
 export default filterSlice.reducer;

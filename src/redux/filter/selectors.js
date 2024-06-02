@@ -1,17 +1,23 @@
-import { createSelector } from 'reselect';
+import { createSelector } from '@reduxjs/toolkit';
 
-const filterSelector = state => state.filter;
-const campersSelector = state => state.campers;
+const selectCampersState = state => state.campers.data || [];
+const selectFilter = state => state.filter;
 
-export const filteredCampersSelector = createSelector(
-  [campersSelector, filterSelector],
+export const selectFilteredCampers = createSelector(
+  [selectCampersState, selectFilter],
   (campers, filter) => {
-    if (!filter) {
-      return campers;
-    }
+    if (!campers.length) return [];
+
+    const { vehicleType, equipment, location } = filter;
 
     return campers.filter(camper => {
-      return camper.someProperty === filter;
+      const matchesVehicleType = vehicleType ? camper.form === vehicleType : true;
+      const matchesEquipment = equipment.length
+        ? equipment.every(equip => camper.details[equip] || camper[equip])
+        : true;
+      const matchesLocation = location ? camper.location.includes(location) : true;
+
+      return matchesVehicleType && matchesEquipment && matchesLocation;
     });
   }
 );
