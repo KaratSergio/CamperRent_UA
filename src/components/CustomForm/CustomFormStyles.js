@@ -14,7 +14,7 @@ export const StyledForm = styled.form`
 `;
 
 export const TitleForm = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   width: 400px;
   display: flex;
   flex-direction: column;

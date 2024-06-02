@@ -83,7 +83,7 @@ const Modal = ({
                 {activePopup === 'features' && (
                   <PopupContentBox>
                     <div>
-                      <Amenities camper={camper} showAll={true} />
+                      <Amenities camper={camper} showAll={false} showTen={true} />
                       <VehicleDetails camper={camper} />
                     </div>
                     <CustomForm />

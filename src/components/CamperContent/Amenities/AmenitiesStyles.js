@@ -11,4 +11,7 @@ export const AmenityItem = styled.li`
   border-radius: 50px;
   padding: 12px 18px;
   background-color: #f2f4f7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;

@@ -5,7 +5,7 @@ export const TextAreaField = styled.textarea`
   border: none;
   border-radius: 5px;
   font-size: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   width: 400px;
   height: 114px;
   resize: none;
