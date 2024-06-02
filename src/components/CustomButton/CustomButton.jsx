@@ -1,11 +1,11 @@
 import { StyledButton } from './CustomButtonStyles';
 
-const Button = ({ onClick, type, children }) => {
+const CustomButton = ({ onClick, type, children, width }) => {
   return (
-    <StyledButton onClick={onClick} type={type}>
+    <StyledButton onClick={onClick} type={type} width={width}>
       {children}
     </StyledButton>
   );
 };
 
-export default Button;
+export default CustomButton;

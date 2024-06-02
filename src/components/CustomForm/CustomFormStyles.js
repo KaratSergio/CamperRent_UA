@@ -2,14 +2,15 @@ import styled from 'styled-components';
 
 export const StyledForm = styled.form`
   width: 448px;
-  height: 532px;
   padding: 24px;
   display: flex;
+  gap: 14px;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
   background-color: var(--white);
-  border: 1px solid var(--light-gray-accent);
+  border: 2px solid var(--light-gray-accent);
+  margin-left: 24px;
 `;
 
 export const TitleForm = styled.div`
@@ -19,6 +20,10 @@ export const TitleForm = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 8px;
+`;
+
+export const ButtonForm = styled.div`
+  width: 100%;
 `;
 
 export const DatePickerWrapper = styled.div``;

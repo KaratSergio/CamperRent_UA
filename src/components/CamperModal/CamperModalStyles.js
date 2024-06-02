@@ -21,7 +21,7 @@ export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
   position: relative;
   padding: 40px;
   max-width: 982px;
@@ -74,8 +74,7 @@ export const PopupContainer = styled.div`
 
 export const DecorLine = styled.div`
   height: 2px;
-  background-color: var(--light-gray);
-  margin-top: 21px;
+  background-color: var(--light-gray-accent);
   width: 100%;
 `;
 
@@ -96,13 +95,20 @@ export const ScrollContainer = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
+  margin-bottom: 20.6px;
   display: flex;
   gap: 40px;
 `;
 
 export const PopupContent = styled.div`
+  display: flex;
+  gap: 24px;
   margin-top: 44px;
   border-radius: 10px;
   display: ${({ active }) => (active ? 'block' : 'none')};
   width: 100%;
+`;
+
+export const PopupContentBox = styled.div`
+  display: flex;
 `;

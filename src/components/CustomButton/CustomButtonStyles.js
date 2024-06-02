@@ -9,6 +9,7 @@ export const StyledButton = styled.button`
   border: none;
   border-radius: 50px;
   transition: background-color 0.3s;
+  width: ${props => props.width || 'auto'};
 
   &:hover {
     background-color: var(--red-accent);

@@ -1,5 +1,5 @@
 import { useForm, FormProvider } from 'react-hook-form';
-import { StyledForm, DatePickerWrapper, TitleForm } from './CustomFormStyles';
+import { StyledForm, DatePickerWrapper, TitleForm, ButtonForm } from './CustomFormStyles';
 
 import CustomInput from './CustomInput/CustomInput';
 import CustomButton from '../CustomButton/CustomButton';
@@ -37,7 +37,11 @@ const CustomForm = () => {
           />
         </DatePickerWrapper>
         <CustomTextArea name="comments" placeholder="Comment" />
-        <CustomButton type="submit">Send</CustomButton>
+        <ButtonForm>
+          <CustomButton width="160px" type="submit">
+            Send
+          </CustomButton>
+        </ButtonForm>
       </StyledForm>
     </FormProvider>
   );

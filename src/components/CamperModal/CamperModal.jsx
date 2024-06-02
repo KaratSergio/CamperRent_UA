@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Images from '../CamperContent/Images/Images';
 import CustomForm from '../CustomForm/CustomForm';
+import VehicleDetails from '../CamperContent/VehicleDetails/VehicleDetails';
+import Amenities from '../CamperContent/Amenities/Amenities';
 
 import { CamperName, CamperRating } from '../CamperCard/CamperCardStyles';
 import {
@@ -14,9 +16,10 @@ import {
   ScrollContainer,
   DecorLine,
   ButtonContainer,
+  PopupContentBox,
 } from './CamperModalStyles';
 
-const Modal = ({ modalOpen, toggleModal, images, name, rating, price, description }) => {
+const Modal = ({ modalOpen, toggleModal, images, name, rating, price, description, camper }) => {
   const [activePopup, setActivePopup] = useState('');
 
   useEffect(() => {
@@ -62,14 +65,18 @@ const Modal = ({ modalOpen, toggleModal, images, name, rating, price, descriptio
             {activePopup && (
               <PopupContent active={activePopup}>
                 {activePopup === 'features' && (
-                  <div>
+                  <PopupContentBox>
+                    <div>
+                      <Amenities camper={camper} showAll={true} />
+                      <VehicleDetails camper={camper} />
+                    </div>
                     <CustomForm />
-                  </div>
+                  </PopupContentBox>
                 )}
                 {activePopup === 'reviews' && (
-                  <div>
+                  <PopupContentBox>
                     <CustomForm />
-                  </div>
+                  </PopupContentBox>
                 )}
               </PopupContent>
             )}

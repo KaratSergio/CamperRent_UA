@@ -61,6 +61,7 @@ const CamperCard = ({ camper }) => {
           rating={camper.rating}
           price={camper.price}
           description={camper.description}
+          camper={camper}
         />
       )}
     </>
