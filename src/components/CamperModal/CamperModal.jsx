@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Images from '../CamperContent/Images/Images';
+import CustomForm from '../CustomForm/CustomForm';
 
 import { CamperName, CamperRating } from '../CamperCard/CamperCardStyles';
 import {
@@ -12,10 +13,22 @@ import {
   CamperDetail,
   ScrollContainer,
   DecorLine,
-} from './ModalStyles';
+  ButtonContainer,
+} from './CamperModalStyles';
 
 const Modal = ({ modalOpen, toggleModal, images, name, rating, price, description }) => {
   const [activePopup, setActivePopup] = useState('');
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [modalOpen]);
 
   const openPopup = popup => {
     setActivePopup(activePopup === popup ? '' : popup);
@@ -34,27 +47,33 @@ const Modal = ({ modalOpen, toggleModal, images, name, rating, price, descriptio
             <CamperDetail>Description: {description}</CamperDetail>
           </ScrollContainer>
           <PopupContainer>
-            <div>
+            <ButtonContainer>
               <PopupButton
                 isActive={activePopup === 'features'}
                 onClick={() => openPopup('features')}
               >
                 Features
               </PopupButton>
-              <PopupContent modalOpen={activePopup === 'features'}>
-                <p>Features content</p>
-              </PopupContent>
-            </div>
-            <div>
               <PopupButton isActive={activePopup === 'reviews'} onClick={() => openPopup('reviews')}>
                 Reviews
               </PopupButton>
-              <PopupContent modalOpen={activePopup === 'reviews'}>
-                <p>Reviews content</p>
+            </ButtonContainer>
+            <DecorLine />
+            {activePopup && (
+              <PopupContent active={activePopup}>
+                {activePopup === 'features' && (
+                  <div>
+                    <CustomForm />
+                  </div>
+                )}
+                {activePopup === 'reviews' && (
+                  <div>
+                    <CustomForm />
+                  </div>
+                )}
               </PopupContent>
-            </div>
+            )}
           </PopupContainer>
-          <DecorLine></DecorLine>
         </ModalContent>
       </ModalWrapper>
     </>

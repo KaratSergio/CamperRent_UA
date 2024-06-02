@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Modal from '../Modal/Modal';
-import Button from '../Button/Button';
+import CamperModal from '../CamperModal/CamperModal';
+import CustomButton from '../CustomButton/CustomButton';
 import Amenities from '../CamperContent/Amenities/Amenities';
 
 import {
@@ -49,11 +49,11 @@ const CamperCard = ({ camper }) => {
           <BoxAmenities>
             <Amenities camper={camper} showAll={false} />
           </BoxAmenities>
-          <Button onClick={handleShowMoreClick}>Show more</Button>
+          <CustomButton onClick={handleShowMoreClick}>Show more</CustomButton>
         </div>
       </CamperItem>
       {isModalOpen && (
-        <Modal
+        <CamperModal
           modalOpen={isModalOpen}
           toggleModal={toggleModal}
           images={camper.gallery}

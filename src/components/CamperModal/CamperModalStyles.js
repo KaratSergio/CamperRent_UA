@@ -7,6 +7,7 @@ export const ModalWrapper = styled.div.attrs(props => ({
   justify-content: center;
   align-items: center;
   position: fixed;
+  overflow: auto;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,12 +17,13 @@ export const ModalWrapper = styled.div.attrs(props => ({
 `;
 
 export const ModalContent = styled.div`
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
   position: relative;
-  padding: 40px 40px 40px 40px;
+  padding: 40px;
   max-width: 982px;
   background-color: var(--white);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -35,6 +37,7 @@ export const CloseButton = styled.button`
   font-size: 32px;
   background: none;
   border: none;
+  cursor: pointer;
 `;
 
 export const PopupButton = styled.button`
@@ -44,6 +47,7 @@ export const PopupButton = styled.button`
   background: none;
   border: none;
   padding: 0;
+  cursor: pointer;
 
   ${props =>
     props.isActive &&
@@ -55,25 +59,24 @@ export const PopupButton = styled.button`
         left: 0;
         width: 100%;
         height: 6px;
+        z-index: 1;
         background-color: var(--red);
       }
     `}
 `;
 
 export const PopupContainer = styled.div`
+  margin-top: 20px;
   display: flex;
-  gap: 40px;
-`;
-export const DecorLine = styled.div`
-  height: 2px;
-  background-color: var(--text-gray);
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
-export const PopupContent = styled.div`
-  display: ${props => (props.modalOpen ? 'block' : 'none')};
-  background-color: #f1f1f1;
-  padding: 10px;
-  margin: 10px 0;
+export const DecorLine = styled.div`
+  height: 2px;
+  background-color: var(--light-gray);
+  margin-top: 21px;
+  width: 100%;
 `;
 
 export const CamperDetail = styled.p`
@@ -87,18 +90,19 @@ export const ScrollContainer = styled.div`
   max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-width: 2px;
 
-  ::-webkit-scrollbar {
-    width: 2px;
-  }
+  scrollbar-width: thin;
+  scrollbar-color: #d9d9d9 transparent;
+`;
 
-  ::-webkit-scrollbar-track {
-    background-color: #ffffff;
-  }
+export const ButtonContainer = styled.div`
+  display: flex;
+  gap: 40px;
+`;
 
-  ::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 20px;
-  }
+export const PopupContent = styled.div`
+  margin-top: 44px;
+  border-radius: 10px;
+  display: ${({ active }) => (active ? 'block' : 'none')};
+  width: 100%;
 `;
