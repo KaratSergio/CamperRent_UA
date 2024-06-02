@@ -1,17 +1,27 @@
-import { Nav, NavList, NavItem, NavLink } from './NavigationStyles';
+import { Nav, NavList, NavItem, StyledNavLink } from './NavigationStyles';
+import Icon from '../Icon/Icon';
 
 const Navigation = () => {
   return (
     <Nav>
       <NavList>
         <NavItem>
-          <NavLink href="/">Home</NavLink>
+          <StyledNavLink to="/">
+            <Icon id="icon-home" size={24} />
+            Home
+          </StyledNavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/catalog">Catalog</NavLink>
+          <StyledNavLink to="/catalog">
+            <Icon id="icon-list" size={24} />
+            Catalog
+          </StyledNavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/favorites">Favorites</NavLink>
+          <StyledNavLink to="/favorites">
+            <Icon id="icon-star" size={24} />
+            Favorites
+          </StyledNavLink>
         </NavItem>
       </NavList>
     </Nav>

@@ -7,7 +7,6 @@ export const Section = styled.section`
 
 export const CamperCollection = styled.section`
   display: flex;
-  margin-top: 100px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

@@ -1,15 +1,10 @@
 import React, { Suspense } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
-import Logotype from '../../assets/images/camper.png';
+import LogoCamper from '../../assets/images/camper.png';
+import LogoTree from '../../assets/images/tree.png';
 
-import {
-  Container,
-  NavBox,
-  LogoBox,
-  LogoImage,
-  LogoText,
-} from './LayoutStyles';
+import { Container, NavBox, LogoBox, LogoImage, LogoText, LogoTextAccent } from './LayoutStyles';
 
 const Layout = () => {
   return (
@@ -17,7 +12,10 @@ const Layout = () => {
       <NavBox>
         <LogoBox>
           <Link to="/">
-            <LogoImage src={Logotype} alt="Logotype" />
+            <LogoTextAccent>
+              <LogoImage src={LogoCamper} alt="CamperCar" />
+              <LogoImage src={LogoTree} alt="Trees" />
+            </LogoTextAccent>
             <LogoText>CamperRent</LogoText>
           </Link>
         </LogoBox>
