@@ -11,6 +11,7 @@ import {
   ContactInfo,
   DecorContent,
   DecorImg,
+  DecorText,
   FooterTitleContact,
 } from './FooterStyles';
 
@@ -18,6 +19,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <DecorContent>
+        <DecorText>CamperRent</DecorText>
         <DecorImg src={DecorImage} alt="Camping" />
       </DecorContent>
       <FooterContent>
@@ -45,8 +47,8 @@ const Footer = () => {
         <div>
           <FooterTitleContact>Contact Us :</FooterTitleContact>
           <ContactInfo>
-            <p>Email: contact@yourcompany.com</p>
             <p>Phone: +123 456 7890</p>
+            <p>Email: contact@yourcompany.com</p>
             <p>Address: 123 Your Street, Your City, Your Country</p>
           </ContactInfo>
         </div>

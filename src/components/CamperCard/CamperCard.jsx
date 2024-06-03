@@ -20,11 +20,20 @@ import Icon from '../Icon/Icon';
 const CamperCard = ({ camper }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [shortenedName, setShortenedName] = useState(camper.name);
 
   useEffect(() => {
     const favoriteStatus = localStorage.getItem(`favorite_${camper._id}`) === 'true';
     setIsFavorite(favoriteStatus);
   }, [camper._id]);
+
+  useEffect(() => {
+    if (camper.name.length > 30) {
+      setShortenedName(camper.name.slice(0, 27) + '...');
+    } else {
+      setShortenedName(camper.name);
+    }
+  }, [camper.name]);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -47,7 +56,7 @@ const CamperCard = ({ camper }) => {
         </div>
         <div>
           <BoxName>
-            <CamperName>{camper.name}</CamperName>
+            <CamperName>{shortenedName}</CamperName>
             <CamperFavorite>
               <CamperName>€{camper.price},00</CamperName>
               <button onClick={toggleFavorite}>
@@ -62,8 +71,15 @@ const CamperCard = ({ camper }) => {
             </CamperFavorite>
           </BoxName>
           <BoxRating>
-            <CamperRating>{camper.rating}</CamperRating>
-            <CamperRating>{camper.location}</CamperRating>
+            <CamperRating>
+              <Icon id="icon-star" color={'var(--yellow)'} strokeColor={'var(--yellow)'} />
+              {camper.rating} ({camper.reviews.length}{' '}
+              {camper.reviews.length === 1 ? 'review' : 'reviews'})
+            </CamperRating>
+            <CamperRating>
+              <Icon id="icon-location" />
+              {camper.location}
+            </CamperRating>
           </BoxRating>
           <CamperDetail>{camper.description}</CamperDetail>
           <BoxAmenities>

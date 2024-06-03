@@ -4,6 +4,7 @@ import Images from '../CamperContent/Images/Images';
 import Reviews from '../CamperContent/Reviews/Reviews';
 import Amenities from '../CamperContent/Amenities/Amenities';
 import VehicleDetails from '../CamperContent/VehicleDetails/VehicleDetails';
+import Icon from '../Icon/Icon';
 
 import { CamperName, CamperRating } from '../CamperCard/CamperCardStyles';
 import {
@@ -77,7 +78,10 @@ const Modal = ({
           <CloseButton onClick={toggleModal}>&times;</CloseButton>
           <CamperName>{name}</CamperName>
           <RatingModalBox>
-            <CamperModalRating>{rating}(reviews)</CamperModalRating>
+            <CamperModalRating>
+              <Icon id="icon-star" color={'var(--yellow)'} strokeColor={'var(--yellow)'} />
+              {rating} ({camper.reviews.length} {camper.reviews.length === 1 ? 'review' : 'reviews'})
+            </CamperModalRating>
             <CamperRating>{location}</CamperRating>
           </RatingModalBox>
           <CamperName>Price: €{price}</CamperName>

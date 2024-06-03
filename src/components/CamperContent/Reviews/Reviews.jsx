@@ -1,4 +1,5 @@
 import { ReviewsList, ReviewItem, ReviewDetail, ReviewAuthor, ReviewerIcon } from './ReviewsStyles';
+import StarRating from '../../StarRating/StarRaring';
 
 const Reviews = ({ camper }) => (
   <ReviewsList>
@@ -8,7 +9,9 @@ const Reviews = ({ camper }) => (
           <ReviewerIcon>{review.reviewer_name.charAt(0)}</ReviewerIcon>
           <ReviewAuthor>
             <p>{review.reviewer_name}</p>
-            <strong>{review.reviewer_rating}</strong>
+            <strong>
+              <StarRating rating={review.reviewer_rating} />
+            </strong>
           </ReviewAuthor>
         </ReviewDetail>
         <p>{review.comment}</p>

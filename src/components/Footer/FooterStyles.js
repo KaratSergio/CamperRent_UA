@@ -70,10 +70,14 @@ export const DecorContent = styled.div`
   border-radius: 50px;
   background-color: var(--white);
   margin-bottom: 10px;
+  box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
 `;
 
 export const DecorImg = styled.img`
-  margin-left: 480px;
-  width: 330px;
-  height: 330px;
+  margin-left: 1100px;
+  width: 240px;
+  height: 240px;
+`;
+export const DecorText = styled.h3`
+  margin-left: 1280px;
 `;

@@ -31,6 +31,9 @@ export const BoxRating = styled.div`
 
 export const CamperRating = styled.p`
   font-family: var(--font-medium);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `;
 
 export const CamperDetail = styled.p`

@@ -122,4 +122,9 @@ export const RatingModalBox = styled.div`
 
 export const CamperModalRating = styled.div`
   text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `;
