@@ -45,13 +45,18 @@ export const CamperImageBox = styled.div`
   width: 290px;
   height: 310px;
   margin-right: 24px;
+  border-radius: 10px;
   overflow: hidden;
+  position: relative;
 `;
 
 export const CamperImage = styled.img`
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
   height: 100%;
-  border-radius: 10px;
   object-fit: cover;
 `;
 

@@ -11,4 +11,5 @@ export const CamperImage = styled.img`
   height: 310px;
   border-radius: 10px;
   object-fit: cover;
+  cursor: pointer;
 `;

@@ -13,7 +13,7 @@ export const NavBox = styled.div`
   max-width: 1440px;
   width: 100%;
   padding: 20px;
-  background-image: linear-gradient(to right, #101828, #475467, #e44848, #ffc531, #f2f4f7);
+  background-color: var(--dark-blue);
   border-radius: 10px;
   margin-bottom: 100px;
 `;
