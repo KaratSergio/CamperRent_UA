@@ -7,6 +7,8 @@ import LocationFilter from './LocationFilter/LocationFilter';
 import EquipmentFilter from './EquipmentFilter/EquipmentFilter';
 import VehicleTypeFilter from './VehicleTypeFilter/VehicleTypeFilter';
 
+import { CamperFilterWrapper } from './CamperFilterStyles';
+
 const CamperFilter = () => {
   const dispatch = useDispatch();
   const [equipmentFilters, setEquipmentFilters] = useState([]);
@@ -32,9 +34,9 @@ const CamperFilter = () => {
   };
 
   return (
-    <div>
-      <p>Filters</p>
+    <CamperFilterWrapper>
       <LocationFilter onChange={handleLocationChange} />
+      <p>Filters</p>
       <EquipmentFilter
         equipmentFilters={equipmentFilters}
         handleEquipmentChange={handleEquipmentChange}
@@ -43,8 +45,10 @@ const CamperFilter = () => {
         vehicleType={vehicleType}
         handleVehicleTypeChange={handleVehicleTypeChange}
       />
-      <CustomButton onClick={handleSearch}>Search</CustomButton>
-    </div>
+      <CustomButton width="173px" onClick={handleSearch}>
+        Search
+      </CustomButton>
+    </CamperFilterWrapper>
   );
 };
 

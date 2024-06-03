@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Icon from '../../Icon/Icon';
+import { InputWrapper, StyledInput, IconWrapper, StyledLabel } from './LocationFilterStyles';
 
 const LocationFilter = ({ onChange }) => {
   const [location, setLocation] = useState('');
@@ -11,13 +13,21 @@ const LocationFilter = ({ onChange }) => {
 
   return (
     <>
-      <input
-        name="location"
-        type="text"
-        placeholder="Enter location..."
-        value={location}
-        onChange={handleLocationChange}
-      />
+      <StyledLabel>
+        Location
+        <InputWrapper>
+          <IconWrapper>
+            <Icon id="icon-location" width={20} height={20} />
+          </IconWrapper>
+          <StyledInput
+            name="location"
+            type="text"
+            placeholder="Enter location..."
+            value={location}
+            onChange={handleLocationChange}
+          />
+        </InputWrapper>
+      </StyledLabel>
     </>
   );
 };
