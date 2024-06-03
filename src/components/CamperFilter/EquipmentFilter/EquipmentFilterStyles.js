@@ -27,7 +27,7 @@ export const IconWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
-  border: 2px solid var(--light-gray-accent);
+  border: 3px solid var(--light-gray-accent);
   transition:
     background-color 0.3s,
     border-color 0.3s;

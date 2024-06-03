@@ -2,6 +2,8 @@ button {
   padding: 0;
   cursor: pointer;
   font-family: inherit;
+  background: transparent;
+  border: transparent;
 }
 
 button:disabled {

@@ -5,7 +5,7 @@ export const ModalWrapper = styled.div.attrs(props => ({
 }))`
   display: ${props => (props.modalOpen ? 'flex' : 'none')};
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: fixed;
   overflow: auto;
   top: 0;
@@ -17,7 +17,7 @@ export const ModalWrapper = styled.div.attrs(props => ({
 `;
 
 export const ModalContent = styled.div`
-  position: fixed;
+  position: sticky;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,6 +28,7 @@ export const ModalContent = styled.div`
   background-color: var(--white);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  overflow-y: auto;
 `;
 
 export const CloseButton = styled.button`
@@ -73,7 +74,7 @@ export const PopupContainer = styled.div`
 `;
 
 export const DecorLine = styled.div`
-  height: 2px;
+  height: 3px;
   background-color: var(--light-gray-accent);
   width: 100%;
 `;

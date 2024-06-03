@@ -46,13 +46,33 @@ const Modal = ({
     };
   }, [modalOpen]);
 
+  useEffect(() => {
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [modalOpen, toggleModal]);
+
   const openPopup = popup => {
     setActivePopup(activePopup === popup ? '' : popup);
   };
 
+  const handleOutsideClick = event => {
+    if (event.target === event.currentTarget && modalOpen) {
+      toggleModal();
+    }
+  };
+
+  const handleEscape = event => {
+    if (event.keyCode === 27 && modalOpen) {
+      toggleModal();
+    }
+  };
+
   return (
     <>
-      <ModalWrapper modalOpen={modalOpen}>
+      <ModalWrapper modalOpen={modalOpen} onClick={handleOutsideClick}>
         <ModalContent>
           <CloseButton onClick={toggleModal}>&times;</CloseButton>
           <CamperName>{name}</CamperName>

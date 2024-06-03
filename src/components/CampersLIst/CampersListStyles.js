@@ -6,6 +6,7 @@ export const Section = styled.section`
 `;
 export const NoResultMessage = styled.div`
   width: 888px;
+  height: 600px;
   font-family: var(--font-semibold);
   font-size: 36px;
   display: flex;
@@ -16,15 +17,12 @@ export const NoResultMessage = styled.div`
 export const CamperCollectionWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 `;
 
 export const CamperCollection = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 32px;
   margin-bottom: 50px;
 `;

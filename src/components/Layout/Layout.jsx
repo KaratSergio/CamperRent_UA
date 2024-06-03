@@ -2,6 +2,8 @@ import React, { Suspense } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
 import Navigation from '../Navigation/Navigation';
+import Footer from '../Footer/Footer';
+
 import LogoCamper from '../../assets/images/camper.png';
 import LogoTree from '../../assets/images/tree.png';
 
@@ -25,6 +27,7 @@ const Layout = () => {
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
+      <Footer />
     </Container>
   );
 };

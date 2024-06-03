@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CamperModal from '../CamperModal/CamperModal';
 import CustomButton from '../CustomButton/CustomButton';
 import Amenities from '../CamperContent/Amenities/Amenities';
@@ -13,19 +13,28 @@ import {
   CamperItem,
   CamperName,
   CamperRating,
+  CamperFavorite,
 } from './CamperCardStyles';
+import Icon from '../Icon/Icon';
 
 const CamperCard = ({ camper }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeCamperId, setActiveCamperId] = useState(null);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    const favoriteStatus = localStorage.getItem(`favorite_${camper._id}`) === 'true';
+    setIsFavorite(favoriteStatus);
+  }, [camper._id]);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const handleShowMoreClick = () => {
-    setActiveCamperId(camper._id);
-    toggleModal();
+  const toggleFavorite = () => {
+    const favoriteKey = `favorite_${camper._id}`;
+    const isCurrentlyFavorite = localStorage.getItem(favoriteKey) === 'true';
+    localStorage.setItem(favoriteKey, !isCurrentlyFavorite);
+    setIsFavorite(!isCurrentlyFavorite);
   };
 
   return (
@@ -39,7 +48,18 @@ const CamperCard = ({ camper }) => {
         <div>
           <BoxName>
             <CamperName>{camper.name}</CamperName>
-            <CamperName>€{camper.price},00</CamperName>
+            <CamperFavorite>
+              <CamperName>€{camper.price},00</CamperName>
+              <button onClick={toggleFavorite}>
+                <Icon
+                  width={24}
+                  height={24}
+                  id={isFavorite ? 'icon-like-pressed' : 'icon-like'}
+                  color={isFavorite ? 'var(--red)' : 'transparent'}
+                  strokeColor={isFavorite ? 'transparent' : 'var(--dark-blue)'}
+                />
+              </button>
+            </CamperFavorite>
           </BoxName>
           <BoxRating>
             <CamperRating>{camper.rating}</CamperRating>
@@ -49,7 +69,9 @@ const CamperCard = ({ camper }) => {
           <BoxAmenities>
             <Amenities camper={camper} showAll={false} />
           </BoxAmenities>
-          <CustomButton onClick={handleShowMoreClick}>Show more</CustomButton>
+          <CustomButton width="166px" onClick={toggleModal}>
+            Show more
+          </CustomButton>
         </div>
       </CamperItem>
       {isModalOpen && (

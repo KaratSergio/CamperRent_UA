@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
   transition: background-color 0.3s;
   width: ${props => props.width || 'auto'};
   background-color: ${props => props.backgroundColor || 'var(--red)'};
-  border: ${props => (props.borderColor ? `2px solid ${props.borderColor}` : 'none')};
+  border: ${props => (props.borderColor ? `3px solid ${props.borderColor}` : 'none')};
 
   &:hover {
     background-color: ${props => props.hoverBackgroundColor || 'var(--red-accent)'};

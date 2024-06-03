@@ -1,8 +1,10 @@
+import FavoritesCampersList from '../components/CampersLIst/FavoritesCampersList/FavoritesCampersList';
+
 const Favorites = () => {
   return (
-    <div>
-      <h1>Favorite</h1>
-    </div>
+    <>
+      <FavoritesCampersList />
+    </>
   );
 };
 

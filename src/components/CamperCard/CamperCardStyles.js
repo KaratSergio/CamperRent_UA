@@ -4,7 +4,7 @@ export const CamperItem = styled.li`
   width: 888px;
   height: 358px;
   display: flex;
-  border: 1px solid var(--light-gray-accent);
+  border: 3px solid var(--light-gray-accent);
   border-radius: 20px;
   padding: 24px;
 `;
@@ -14,7 +14,7 @@ export const CamperName = styled.h2`
 `;
 
 export const BoxAmenities = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 `;
 
 export const BoxName = styled.div`
@@ -38,7 +38,7 @@ export const CamperDetail = styled.p`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
 `;
 
 export const CamperImageBox = styled.div`
@@ -53,4 +53,9 @@ export const CamperImage = styled.img`
   height: 100%;
   border-radius: 10px;
   object-fit: cover;
+`;
+
+export const CamperFavorite = styled.div`
+  display: flex;
+  gap: 10px;
 `;
