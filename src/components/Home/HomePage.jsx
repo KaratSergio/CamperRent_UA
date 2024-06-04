@@ -9,6 +9,8 @@ import BannerF from '../../assets/images/slider/foto-f.jpg';
 import BannerG from '../../assets/images/slider/foto-g.jpg';
 import BannerH from '../../assets/images/slider/foto-h.jpg';
 
+import { DecorLine } from '../CamperModal/CamperModalStyles';
+
 import {
   HomeSection,
   MainTitle,
@@ -25,7 +27,6 @@ import {
   MessageBoxOne,
   MessageBoxTwo,
 } from './HomePageStyles';
-import { DecorLine } from '../CamperModal/CamperModalStyles';
 
 const HomePage = () => {
   const images = [BannerA, BannerB, BannerC, BannerD, BannerE];

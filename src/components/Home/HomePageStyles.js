@@ -15,6 +15,9 @@ export const MainTitle = styled.h1`
 export const MainText = styled.p`
   margin-top: 24px;
   width: 660px;
+  background-color: var(--light-gray-accent);
+  border-radius: 50px;
+  padding: 20px;
   letter-spacing: 0.03em;
   line-height: 1.2em;
   line-height: 1.8em;

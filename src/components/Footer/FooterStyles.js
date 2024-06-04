@@ -4,7 +4,8 @@ export const FooterWrapper = styled.footer`
   background-color: var(--dark-blue);
   color: var(--white);
   padding: 20px;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   border-radius: 10px;
   margin-top: 100px;
 `;
@@ -19,6 +20,7 @@ export const FooterTitle = styled.h4`
   margin-bottom: 10px;
   margin-top: 20px;
 `;
+
 export const FooterTitleContact = styled.h4`
   font-size: 18px;
   margin-bottom: 10px;
@@ -62,6 +64,7 @@ export const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 `;
 
 export const DecorContent = styled.div`
@@ -70,7 +73,7 @@ export const DecorContent = styled.div`
   border-radius: 50px;
   background-color: var(--white);
   margin-bottom: 10px;
-  box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.5);
 `;
 
 export const DecorImg = styled.img`

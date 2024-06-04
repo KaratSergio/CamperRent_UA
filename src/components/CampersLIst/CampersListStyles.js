@@ -22,7 +22,7 @@ export const CamperCollectionWrapper = styled.section`
 
 export const CamperCollection = styled.section`
   display: flex;
-  flex-direction: column;
   gap: 32px;
+  flex-direction: column;
   margin-bottom: 50px;
 `;

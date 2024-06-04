@@ -1,7 +1,7 @@
 import { useFormContext } from 'react-hook-form';
-import { InputField } from './CustomInputStyles';
+import { InputField } from './InputStyles';
 
-const CustomInput = ({ name, type, placeholder }) => {
+const Input = ({ name, type, placeholder }) => {
   const {
     register,
     formState: { errors },
@@ -32,4 +32,4 @@ const CustomInput = ({ name, type, placeholder }) => {
   );
 };
 
-export default CustomInput;
+export default Input;

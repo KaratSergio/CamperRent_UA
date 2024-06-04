@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Icon from '../../Icon/Icon';
+
 import { InputWrapper, StyledInput, IconWrapper, StyledLabel } from './LocationFilterStyles';
 
 const LocationFilter = ({ onChange }) => {

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const ModalWrapper = styled.div.attrs(props => ({
   modalOpen: props.modalOpen,
 }))`
-  display: ${props => (props.modalOpen ? 'flex' : 'none')};
+  display: ${props => (props.$modalOpen ? 'flex' : 'none')};
   justify-content: center;
   align-items: flex-start;
   position: fixed;
@@ -38,7 +38,6 @@ export const CloseButton = styled.button`
   font-size: 32px;
   background: none;
   border: none;
-  cursor: pointer;
 `;
 
 export const PopupButton = styled.button`
@@ -48,10 +47,9 @@ export const PopupButton = styled.button`
   background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
 
   ${props =>
-    props.isActive &&
+    props.$isActive &&
     css`
       &::after {
         content: '';
@@ -74,7 +72,7 @@ export const PopupContainer = styled.div`
 `;
 
 export const DecorLine = styled.div`
-  height: 3px;
+  height: 2px;
   background-color: var(--light-gray-accent);
   width: 100%;
 `;
@@ -106,7 +104,7 @@ export const PopupContent = styled.div`
   gap: 24px;
   margin-top: 44px;
   border-radius: 10px;
-  display: ${({ active }) => (active ? 'block' : 'none')};
+  display: ${({ $active }) => ($active ? 'block' : 'none')};
   width: 100%;
 `;
 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Modal from '../../Custom/Modal/Modal';
+
 import { ImagesContainer, CamperImage } from './ImagesStyles';
 
 const Images = ({ images }) => {

@@ -1,4 +1,12 @@
-import { ReviewsList, ReviewItem, ReviewDetail, ReviewAuthor, ReviewerIcon } from './ReviewsStyles';
+import {
+  ReviewsList,
+  ReviewItem,
+  ReviewDetail,
+  ReviewAuthor,
+  ReviewerIcon,
+  ReviewComment,
+} from './ReviewsStyles';
+
 import StarRating from '../../StarRating/StarRaring';
 
 const Reviews = ({ camper }) => (
@@ -14,7 +22,7 @@ const Reviews = ({ camper }) => (
             </strong>
           </ReviewAuthor>
         </ReviewDetail>
-        <p>{review.comment}</p>
+        <ReviewComment>{review.comment}</ReviewComment>
       </ReviewItem>
     ))}
   </ReviewsList>

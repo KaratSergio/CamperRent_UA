@@ -1,6 +1,10 @@
 import { AmenitiesList, AmenityItem } from './AmenitiesStyles';
 import Icon from '../../Icon/Icon';
 
+const capitalizeText = text => {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+};
+
 const Amenities = ({ camper, showAll, showTen }) => {
   const amenities = [];
 
@@ -8,21 +12,21 @@ const Amenities = ({ camper, showAll, showTen }) => {
     amenities.push(
       <AmenityItem key="adults">
         <Icon id="icon-adults" color={'var(--dark-blue)'} strokeColor={'transparent'} />
-        {camper.adults} adults
+        {camper.adults} {capitalizeText('adults')}
       </AmenityItem>
     );
-  if (camper.details.airConditioner !== 0)
+  if (camper.transmission !== 0)
     amenities.push(
-      <AmenityItem key="airConditioner">
-        <Icon id="icon-conditioner" />
-        Air Conditioner
+      <AmenityItem key="transmission">
+        <Icon id="icon-transmission" />
+        {capitalizeText(camper.transmission)}
       </AmenityItem>
     );
-  if (camper.details.bathroom !== 0)
+  if (camper.engine !== 0)
     amenities.push(
-      <AmenityItem key="bathroom">
-        <Icon id="icon-shower" />
-        Bathroom
+      <AmenityItem key="engine">
+        <Icon id="icon-petrol" color={'var(--dark-blue)'} strokeColor={'transparent'} />
+        {capitalizeText(camper.engine)}
       </AmenityItem>
     );
   if (camper.details.kitchen !== 0)
@@ -39,10 +43,16 @@ const Amenities = ({ camper, showAll, showTen }) => {
         {camper.details.beds} Beds
       </AmenityItem>
     );
+  if (camper.details.airConditioner !== 0)
+    amenities.push(
+      <AmenityItem key="airConditioner">
+        <Icon id="icon-ac" color={'var(--dark-blue)'} strokeColor={'transparent'} />
+        AC
+      </AmenityItem>
+    );
   if (camper.details.TV !== 0)
     amenities.push(
       <AmenityItem key="TV">
-        {' '}
         <Icon id="icon-tv" />
         TV
       </AmenityItem>
@@ -110,11 +120,11 @@ const Amenities = ({ camper, showAll, showTen }) => {
         Water {camper.details.water}
       </AmenityItem>
     );
-  if (camper.transmission !== 0)
+  if (camper.details.bathroom !== 0)
     amenities.push(
-      <AmenityItem key="transmission">
-        <Icon id="icon-transmission" />
-        {camper.transmission}
+      <AmenityItem key="bathroom">
+        <Icon id="icon-shower" />
+        Bathroom
       </AmenityItem>
     );
   if (camper.adults !== 0)

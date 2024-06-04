@@ -4,7 +4,7 @@ export const CamperItem = styled.li`
   width: 888px;
   height: 358px;
   display: flex;
-  border: 3px solid var(--light-gray-accent);
+  border: 2px solid var(--light-gray-accent);
   border-radius: 20px;
   padding: 24px;
 `;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
+import Button from '../Custom/Button/Button';
 import CamperModal from '../CamperModal/CamperModal';
-import CustomButton from '../CustomButton/CustomButton';
 import Amenities from '../CamperContent/Amenities/Amenities';
 
 import {
@@ -85,9 +85,9 @@ const CamperCard = ({ camper }) => {
           <BoxAmenities>
             <Amenities camper={camper} showAll={false} />
           </BoxAmenities>
-          <CustomButton width="166px" onClick={toggleModal}>
+          <Button width="166px" onClick={toggleModal}>
             Show more
-          </CustomButton>
+          </Button>
         </div>
       </CamperItem>
       {isModalOpen && (

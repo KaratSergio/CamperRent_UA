@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setFilterType } from '../../redux/filter/slice';
 
-import CustomButton from '../CustomButton/CustomButton';
+import Button from '../Custom/Button/Button';
 import LocationFilter from './LocationFilter/LocationFilter';
 import EquipmentFilter from './EquipmentFilter/EquipmentFilter';
 import VehicleTypeFilter from './VehicleTypeFilter/VehicleTypeFilter';
 
-import { CamperFilterWrapper } from './CamperFilterStyles';
+import { CamperFilterWrapper, FilterTitle } from './CamperFilterStyles';
 
 const CamperFilter = () => {
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ const CamperFilter = () => {
   return (
     <CamperFilterWrapper>
       <LocationFilter onChange={handleLocationChange} />
-      <p>Filters</p>
+      <FilterTitle>Filters</FilterTitle>
       <EquipmentFilter
         equipmentFilters={equipmentFilters}
         handleEquipmentChange={handleEquipmentChange}
@@ -45,9 +45,9 @@ const CamperFilter = () => {
         vehicleType={vehicleType}
         handleVehicleTypeChange={handleVehicleTypeChange}
       />
-      <CustomButton width="173px" onClick={handleSearch}>
+      <Button width="173px" onClick={handleSearch}>
         Search
-      </CustomButton>
+      </Button>
     </CamperFilterWrapper>
   );
 };

@@ -13,7 +13,7 @@ export const LabelWrapper = styled.label`
   align-items: center;
 `;
 
-export const VehicleTitle = styled.h3`
+export const VehicleTitle = styled.h2`
   margin-bottom: 24px;
   letter-spacing: 0.02em;
 `;
@@ -27,7 +27,7 @@ export const IconWrapper = styled.div`
   justify-content: center;
 
   border-radius: 10px;
-  border: 3px solid var(--light-gray-accent);
+  border: 2px solid var(--light-gray-accent);
   transition:
     background-color 0.3s,
     border-color 0.3s;

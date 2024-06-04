@@ -5,9 +5,9 @@ import { setFilterType } from '../../redux/filter/slice';
 import { fetchCampersAsync } from '../../redux/campers/actions';
 import { selectFilteredCampers } from '../../redux/filter/selectors';
 
+import Button from '../Custom/Button/Button';
 import CamperCard from '../CamperCard/CamperCard';
 import CamperFilter from '../CamperFilter/CamperFilter';
-import CustomButton from '../CustomButton/CustomButton';
 
 import {
   Section,
@@ -52,16 +52,16 @@ const CampersList = () => {
           )}
         </CamperCollection>
         {remainingCampersCount > 0 && (
-          <CustomButton
+          <Button
             width="175px"
-            borderColor="var(--light-gray-accent)"
-            backgroundColor="transparent"
-            textColor="var(--dark-blue)"
-            hoverBackgroundColor="var(--light-gray-accent)"
+            border="var(--light-gray-accent)"
+            background="transparent"
+            color="var(--dark-blue)"
+            hover="var(--light-gray-accent)"
             onClick={handleLoadMore}
           >
             Load more
-          </CustomButton>
+          </Button>
         )}
       </CamperCollectionWrapper>
     </Section>

@@ -26,26 +26,7 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 24px;
   position: relative;
 
-  &.active::before {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: currentColor;
-  }
-
-  &.active::after {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: currentColor;
-  }
-
+  &.active::before,
   &:hover::before {
     content: '';
     position: absolute;
@@ -56,6 +37,7 @@ export const StyledNavLink = styled(NavLink)`
     background-color: currentColor;
   }
 
+  &.active::after,
   &:hover::after {
     content: '';
     position: absolute;

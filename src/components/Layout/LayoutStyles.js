@@ -21,6 +21,7 @@ export const NavBox = styled.div`
 export const LogoBox = styled.div`
   display: flex;
   align-items: center;
+  margin-right: 20px;
 `;
 
 export const LogoImage = styled.img`

@@ -1,7 +1,7 @@
 import { useFormContext } from 'react-hook-form';
-import { TextAreaField } from './CustomTextAreaStyles';
+import { TextAreaField } from './TextAreaStyles';
 
-const CustomTextArea = ({ name, placeholder }) => {
+const TextArea = ({ name, placeholder }) => {
   const {
     register,
     formState: { errors },
@@ -15,4 +15,4 @@ const CustomTextArea = ({ name, placeholder }) => {
   );
 };
 
-export default CustomTextArea;
+export default TextArea;

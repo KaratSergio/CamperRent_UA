@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const InputField = styled.input`
-  padding: 10px;
+  padding: 18px;
   border: none;
   border-radius: 10px;
   font-size: 16px;

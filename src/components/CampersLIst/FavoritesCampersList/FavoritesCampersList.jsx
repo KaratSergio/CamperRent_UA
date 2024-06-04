@@ -19,9 +19,9 @@ const FavoritesCampersList = () => {
     const favorites = Object.keys(localStorage).filter(
       key => key.startsWith('favorite_') && localStorage.getItem(key) === 'true'
     );
-    console.log('Favorites from localStorage:', favorites);
+
     const filteredCampers = campers.filter(camper => favorites.includes(`favorite_${camper._id}`));
-    console.log('Filtered campers:', filteredCampers);
+
     setFavoriteCampers(filteredCampers);
   }, [campers]);
 
