@@ -1,5 +1,6 @@
 {
-  "name": "https://KaratSergio.github.io/CamperRent_UA",
+  "name": "camper-rent-ua",
+  "homepage": "https://KaratSergio.github.io/CamperRent_UA/",
   "private": true,
   "version": "1.0.0",
   "type": "module",
