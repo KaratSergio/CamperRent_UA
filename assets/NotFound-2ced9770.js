@@ -1,4 +1,4 @@
-import{s as n,j as e,I as t}from"./index-74802434.js";const o="/CamperRent_UA/assets/camp-63f245ee.png",r=n.div`
+import{s as n,j as e,I as t}from"./index-178146e4.js";const o="/CamperRent_UA/assets/camp-63f245ee.png",r=n.div`
   justify-content: space-around;
   background-image: url('${o}');
   background-size: 20%;
