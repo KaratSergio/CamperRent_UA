@@ -22,11 +22,18 @@ const Input = ({ name, type, placeholder }) => {
         message: 'Please enter a valid email address',
       },
     },
+    comments: {
+      required: 'Comment is required',
+    },
   };
 
   return (
     <>
-      <InputField type={type} placeholder={placeholder} {...register(name, validationRules[name])} />
+      <InputField
+        type={type}
+        placeholder={placeholder}
+        {...register(name, validationRules[name.toString()])}
+      />
       {errors[name] && <p>{errors[name].message}</p>}
     </>
   );

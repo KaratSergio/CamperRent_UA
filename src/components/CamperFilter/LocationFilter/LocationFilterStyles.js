@@ -26,6 +26,10 @@ export const StyledInput = styled.input`
   border: none;
   background-color: var(--light-gray);
   box-sizing: border-box;
+
+  &:hover {
+    border: 1px solid var(--text-gray);
+  }
 `;
 
 export const IconWrapper = styled.div`

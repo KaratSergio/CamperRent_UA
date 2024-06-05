@@ -26,6 +26,11 @@ export const IconWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
+  &:hover {
+    border: 2px solid var(--red);
+  }
+
+  cursor: pointer;
   border-radius: 10px;
   border: 2px solid var(--light-gray-accent);
   transition:
