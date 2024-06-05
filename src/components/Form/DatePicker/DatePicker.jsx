@@ -16,7 +16,6 @@ const CustomDatePicker = ({ value, onChange }) => {
         showMonthDropdown
         dropdownMode="select"
         customInput={<StyledInput />}
-        className="custom-datepicker"
         placeholderText="Booking date"
       />
     </InputWrapper>

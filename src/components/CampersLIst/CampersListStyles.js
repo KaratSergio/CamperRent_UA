@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { RingLoader } from 'react-spinners';
 
 export const Section = styled.section`
   max-width: 1440px;
@@ -25,4 +26,18 @@ export const CamperCollection = styled.section`
   gap: 32px;
   flex-direction: column;
   margin-bottom: 50px;
+`;
+
+export const SpinnerBox = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+`;
+export const StyledRingLoader = styled(RingLoader)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

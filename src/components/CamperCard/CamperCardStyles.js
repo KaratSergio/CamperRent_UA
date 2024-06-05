@@ -13,12 +13,19 @@ export const CamperName = styled.h2`
   font-size: 24px;
 `;
 
+export const CamperPrice = styled.p`
+  font-weight: 600;
+  font-size: 24px;
+`;
+
 export const BoxAmenities = styled.div`
-  margin-bottom: 36px;
+  margin-bottom: 32px;
+  width: 528px;
 `;
 
 export const BoxName = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
 `;
@@ -29,11 +36,29 @@ export const BoxRating = styled.div`
   margin-bottom: 24px;
 `;
 
+export const CamperLocation = styled.p`
+  font-family: var(--font-medium);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+`;
+
 export const CamperRating = styled.p`
   font-family: var(--font-medium);
   display: flex;
   align-items: center;
   gap: 4px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 24px;
+    width: 82%;
+    height: 2px;
+    background-color: currentColor;
+  }
 `;
 
 export const CamperDetail = styled.p`
@@ -65,5 +90,6 @@ export const CamperImage = styled.img`
 
 export const CamperFavorite = styled.div`
   display: flex;
+  align-items: center;
   gap: 10px;
 `;

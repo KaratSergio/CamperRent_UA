@@ -23,7 +23,7 @@ export const ModalContent = styled.div`
   justify-content: space-between;
   width: 100%;
   position: relative;
-  padding: 40px;
+  padding: 40px 16px 40px 40px;
   max-width: 982px;
   background-color: var(--white);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -88,9 +88,7 @@ export const ScrollContainer = styled.div`
   max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
-
-  scrollbar-width: thin;
-  scrollbar-color: #d9d9d9 transparent;
+  padding-right: 20px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -110,19 +108,29 @@ export const PopupContent = styled.div`
 
 export const PopupContentBox = styled.div`
   display: flex;
+  width: 900px;
 `;
 
 export const RatingModalBox = styled.div`
   display: flex;
   gap: 16px;
   margin: 8px 0 16px 0;
+  font-family: var(--font-semibold);
 `;
 
 export const CamperModalRating = styled.div`
-  text-decoration: underline;
-  text-decoration-thickness: 0.1em;
-
+  position: relative;
   display: flex;
   align-items: center;
   gap: 4px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 24px;
+    width: 82%;
+    height: 2px;
+    background-color: currentColor;
+  }
 `;

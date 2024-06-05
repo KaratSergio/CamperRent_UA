@@ -82,12 +82,21 @@ const Modal = ({
           <CamperName>{name}</CamperName>
           <RatingModalBox>
             <CamperModalRating>
-              <Icon id="icon-star" color={'var(--yellow)'} strokeColor={'var(--yellow)'} />
+              <Icon
+                id="icon-star"
+                width="16"
+                height="16"
+                color={'var(--yellow)'}
+                strokeColor={'var(--yellow)'}
+              />
               {rating} ({camper.reviews.length} {camper.reviews.length === 1 ? 'review' : 'reviews'})
             </CamperModalRating>
-            <CamperRating>{location}</CamperRating>
+            <CamperRating>
+              <Icon id="icon-location" width="16" height="16" />
+              {location}
+            </CamperRating>
           </RatingModalBox>
-          <CamperName>Price: €{price}</CamperName>
+          <CamperName>€{price}.00</CamperName>
           <ScrollContainer>
             <Images images={images} />
             <CamperDetail>Description: {description}</CamperDetail>

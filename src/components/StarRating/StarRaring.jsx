@@ -8,6 +8,8 @@ const StarRating = ({ rating }) => {
       <Icon
         key={i}
         id="icon-star"
+        width="16"
+        height="16"
         color={i <= rating ? 'var(--yellow)' : 'var(--light-gray-accent)'}
         strokeColor={i <= rating ? 'var(--yellow)' : 'var(--light-gray-accent)'}
       />

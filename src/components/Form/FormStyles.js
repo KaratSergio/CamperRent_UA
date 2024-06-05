@@ -18,6 +18,7 @@ export const TitleForm = styled.div`
   width: 400px;
   display: flex;
   gap: 8px;
+  font-size: 20px;
   flex-direction: column;
   align-items: start;
 `;
@@ -27,3 +28,8 @@ export const ButtonFormBox = styled.div`
 `;
 
 export const DatePickerWrapper = styled.div``;
+
+export const FormText = styled.p`
+  font-size: 16px;
+  color: var(--text-gray-a);
+`;

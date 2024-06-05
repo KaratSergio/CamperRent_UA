@@ -1,5 +1,5 @@
 import { useForm, FormProvider } from 'react-hook-form';
-import { StyledForm, DatePickerWrapper, TitleForm, ButtonFormBox } from './FormStyles';
+import { StyledForm, DatePickerWrapper, TitleForm, ButtonFormBox, FormText } from './FormStyles';
 
 import Input from './Input/Input';
 import TextArea from './TextArea/TextArea';
@@ -24,13 +24,12 @@ const Form = () => {
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <TitleForm>
           <h2>Book your campervan now</h2>
-          <p>Stay connected! We are always ready to help you.</p>
+          <FormText>Stay connected! We are always ready to help you.</FormText>
         </TitleForm>
         <Input name="name" type="text" placeholder="Name" />
         <Input name="email" type="email" placeholder="Email" />
         <DatePickerWrapper>
           <CustomDatePicker
-            className="custom-datepicker"
             name="email"
             type="text"
             placeholder="Booking date"

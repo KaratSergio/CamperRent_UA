@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { RingLoader } from 'react-spinners';
 
 import { setFilterType } from '../../redux/filter/slice';
 import { fetchCampersAsync } from '../../redux/campers/actions';
@@ -14,16 +15,22 @@ import {
   CamperCollection,
   CamperCollectionWrapper,
   NoResultMessage,
+  StyledRingLoader,
+  SpinnerBox,
 } from './CampersListStyles';
 
 const CampersList = () => {
   const dispatch = useDispatch();
   const filteredCampers = useSelector(selectFilteredCampers);
   const [visibleCampersCount, setVisibleCampersCount] = useState(4);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     dispatch(setFilterType({ equipment: [], vehicleType: null, location: '' }));
-    dispatch(fetchCampersAsync());
+    dispatch(fetchCampersAsync())
+      .then(() => setIsLoading(false))
+      .catch(() => setIsLoading(false));
   }, [dispatch]);
 
   const handleLoadMore = () => {
@@ -40,6 +47,9 @@ const CampersList = () => {
     <Section>
       <CamperFilter />
       <CamperCollectionWrapper>
+        <SpinnerBox>
+          <StyledRingLoader color={'var(--dark-blue)'} size={90} loading={isLoading} />
+        </SpinnerBox>
         <CamperCollection>
           {filteredCampers.length === 0 ? (
             <NoResultMessage>

@@ -7,6 +7,18 @@ const capitalizeText = text => {
 
 const Amenities = ({ camper, showAll, showTen }) => {
   const amenities = [];
+  const keysToShow = [
+    'adults',
+    'transmission',
+    'AC',
+    'engine',
+    'kitchen',
+    'beds',
+    'airConditioner',
+    'CD',
+    'radio',
+    'hob',
+  ];
 
   if (camper.adults !== 0)
     amenities.push(
@@ -45,7 +57,7 @@ const Amenities = ({ camper, showAll, showTen }) => {
     );
   if (camper.details.airConditioner !== 0)
     amenities.push(
-      <AmenityItem key="airConditioner">
+      <AmenityItem key="AC">
         <Icon id="icon-ac" color={'var(--dark-blue)'} strokeColor={'transparent'} />
         AC
       </AmenityItem>
@@ -127,17 +139,25 @@ const Amenities = ({ camper, showAll, showTen }) => {
         Bathroom
       </AmenityItem>
     );
-  if (camper.adults !== 0)
+  if (camper.details.airConditioner !== 0)
     amenities.push(
-      <AmenityItem key="ac">
-        AC
-        <Icon id="icon-ac" color={'var(--dark-blue)'} strokeColor={'transparent'} />
+      <AmenityItem key="airConditioner">
+        <Icon id="icon-conditioner" />
+        {camper.details.airConditioner} air conditioner
       </AmenityItem>
     );
 
+  const orderedAmenities = [];
+  keysToShow.forEach(key => {
+    const amenity = amenities.find(item => item.key === key);
+    if (amenity) {
+      orderedAmenities.push(amenity);
+    }
+  });
+
   return (
     <AmenitiesList>
-      {showAll ? amenities : showTen ? amenities.slice(0, 10) : amenities.slice(0, 6)}
+      {showAll ? amenities : showTen ? orderedAmenities.slice(0, 10) : amenities.slice(0, 6)}
     </AmenitiesList>
   );
 };

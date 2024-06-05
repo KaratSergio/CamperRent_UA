@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -29,21 +29,25 @@ export const StyledIcon = styled.div`
   z-index: 90;
 `;
 
+export const CalendarContainer = styled.div`
+  width: 600px;
+`;
+
 export const StyledDatePicker = styled(DatePicker)`
-  .custom-datepicker .react-datepicker {
+  .react-datepicker {
     background-color: #fff;
   }
 
-  .custom-datepicker .react-datepicker__header {
+  .react-datepicker__header {
     display: none;
   }
 
-  .custom-datepicker .react-datepicker__current-month {
+  .react-datepicker__current-month {
     font-weight: bold;
     color: red;
   }
 
-  .custom-datepicker .react-datepicker__day--selected {
+  .react-datepicker__day--selected {
     background-color: #fff;
     color: #fff;
   }

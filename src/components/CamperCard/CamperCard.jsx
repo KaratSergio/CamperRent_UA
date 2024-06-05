@@ -14,6 +14,8 @@ import {
   CamperName,
   CamperRating,
   CamperFavorite,
+  CamperPrice,
+  CamperLocation,
 } from './CamperCardStyles';
 import Icon from '../Icon/Icon';
 
@@ -58,7 +60,7 @@ const CamperCard = ({ camper }) => {
           <BoxName>
             <CamperName>{shortenedName}</CamperName>
             <CamperFavorite>
-              <CamperName>€{camper.price},00</CamperName>
+              <CamperPrice>€{camper.price}.00</CamperPrice>
               <button onClick={toggleFavorite}>
                 <Icon
                   width={24}
@@ -72,18 +74,24 @@ const CamperCard = ({ camper }) => {
           </BoxName>
           <BoxRating>
             <CamperRating>
-              <Icon id="icon-star" color={'var(--yellow)'} strokeColor={'var(--yellow)'} />
+              <Icon
+                id="icon-star"
+                width="16"
+                height="16"
+                color={'var(--yellow)'}
+                strokeColor={'var(--yellow)'}
+              />
               {camper.rating} ({camper.reviews.length}{' '}
               {camper.reviews.length === 1 ? 'review' : 'reviews'})
             </CamperRating>
-            <CamperRating>
-              <Icon id="icon-location" />
+            <CamperLocation>
+              <Icon id="icon-location" width="16" height="16" />
               {camper.location}
-            </CamperRating>
+            </CamperLocation>
           </BoxRating>
           <CamperDetail>{camper.description}</CamperDetail>
           <BoxAmenities>
-            <Amenities camper={camper} showAll={false} />
+            <Amenities camper={camper} />
           </BoxAmenities>
           <Button width="166px" onClick={toggleModal}>
             Show more
