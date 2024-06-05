@@ -8,7 +8,7 @@ import VehicleDetails from '../CamperContent/VehicleDetails/VehicleDetails';
 import Icon from '../Icon/Icon';
 import Form from '../Form/Form';
 
-import { CamperName, CamperRating } from '../CamperCard/CamperCardStyles';
+import { CamperName, CamperLocation } from '../CamperCard/CamperCardStyles';
 
 import {
   ModalWrapper,
@@ -58,17 +58,17 @@ const Modal = ({
     };
   }, [modalOpen, toggleModal]);
 
-  const openPopup = popup => {
+  const openPopup = (popup) => {
     setActivePopup(activePopup === popup ? '' : popup);
   };
 
-  const handleOutsideClick = event => {
+  const handleOutsideClick = (event) => {
     if (event.target === event.currentTarget && modalOpen) {
       toggleModal();
     }
   };
 
-  const handleEscape = event => {
+  const handleEscape = (event) => {
     if (event.keyCode === 27 && modalOpen) {
       toggleModal();
     }
@@ -91,10 +91,10 @@ const Modal = ({
               />
               {rating} ({camper.reviews.length} {camper.reviews.length === 1 ? 'review' : 'reviews'})
             </CamperModalRating>
-            <CamperRating>
+            <CamperLocation>
               <Icon id="icon-location" width="16" height="16" />
               {location}
-            </CamperRating>
+            </CamperLocation>
           </RatingModalBox>
           <CamperName>€{price}.00</CamperName>
           <ScrollContainer>
