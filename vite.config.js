@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import replace from '@rollup/plugin-replace';
 
 export default defineConfig({
+  base: '/CamperRent_UA/',
   plugins: [
     react(),
     replace({
