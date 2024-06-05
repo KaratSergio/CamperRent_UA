@@ -1,7 +1,13 @@
-// CustomDatePicker.js
 import { useFormContext } from 'react-hook-form';
 import Icon from '../../Icon/Icon';
-import { InputWrapper, StyledInput, StyledIcon, StyledDatePicker } from './DatePickerStyles';
+import customLocale from './locale';
+import {
+  InputWrapper,
+  StyledInput,
+  StyledIcon,
+  StyledDatePicker,
+  CalendarContainer,
+} from './DatePickerStyles';
 
 const CustomDatePicker = ({ value, onChange, required }) => {
   const {
@@ -21,18 +27,21 @@ const CustomDatePicker = ({ value, onChange, required }) => {
         <StyledIcon>
           <Icon id="icon-calendar" />
         </StyledIcon>
-        <StyledDatePicker
-          selected={value}
-          onChange={onChange}
-          dateFormat="dd/MM/yyyy"
-          showYearDropdown
-          showMonthDropdown
-          dropdownMode="select"
-          customInput={
-            <StyledInput {...register('date', { ...validationRules['date'], required })} />
-          }
-          placeholderText="Booking date"
-        />
+        <CalendarContainer>
+          <StyledDatePicker
+            selected={value}
+            onChange={onChange}
+            dateFormat="dd.MM.yyyy"
+            showYearDropdown
+            showMonthDropdown
+            locale={customLocale}
+            dropdownMode="select"
+            customInput={
+              <StyledInput {...register('date', { ...validationRules['date'], required })} />
+            }
+            placeholderText="Booking date"
+          />
+        </CalendarContainer>
       </InputWrapper>
       {errors['date'] && <p>{errors['date'].message}</p>}
     </>
