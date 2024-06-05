@@ -11,13 +11,4 @@ export default defineConfig({
       preventAssignment: true,
     }),
   ],
-  resolve: {
-    alias: {
-      '@src': '/src',
-      '@api': '/src/api',
-      '@pages': '/src/pages',
-      '@assets': '/src/assets',
-      '@components': '/src/components',
-    },
-  },
 });
